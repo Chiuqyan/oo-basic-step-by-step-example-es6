@@ -6,7 +6,7 @@ class Student extends Person {
     }
     introduce() {
         let personStr = super.basic_introduce();
-        return '${personStr} I am a Student. I am at Class ${this.klass}.';
+        return `${personStr} I am a Student. I am at Class ${this.klass}.`
     }
 }
 exports["default"] = Student;
