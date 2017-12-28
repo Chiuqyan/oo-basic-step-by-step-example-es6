@@ -28,14 +28,6 @@ class Teacher extends Person {
         });
         return false;
     }
-
-    registerAssignLeaderListener(student) {
-        return `I am ${this.name}. I know ${student.name} become Leader of Class ${student.klass.number}.`;
-    }
-
-    registerJoinListener(student) {
-        return `I am ${this.name}. I know ${student.name} has joined Class ${student.klass.number}.`;
-    }
 }
 exports["default"] = Teacher;
 module.exports = exports["default"];

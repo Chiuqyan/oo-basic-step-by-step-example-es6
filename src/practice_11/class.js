@@ -17,8 +17,6 @@ class Class {
     assignLeader(student, teacher) {
         if (student.klass.number === this.number) {
             this.leader = student;
-            if (typeof(teacher) !== 'undefined')
-                teacher.registerAssignLeaderListener(student);
         } else
             console.log("It is not one of us.");
     }
@@ -30,8 +28,6 @@ class Class {
 
     appendMember(student, teacher) {
         student.klass = this;
-        if (typeof(teacher) !== 'undefined')
-            teacher.registerJoinListener(student);
     }
     isIn(student) {
         if (student.klass.number === this.number)
