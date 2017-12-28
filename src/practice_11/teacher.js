@@ -30,11 +30,11 @@ class Teacher extends Person {
     }
 
     registerAssignLeaderListener(student) {
-        console.log(`I am ${this.name}. I know ${student.name} become Leader of Class ${student.klass.number}.`);
+        return `I am ${this.name}. I know ${student.name} become Leader of Class ${student.klass.number}.`;
     }
 
     registerJoinListener(student) {
-        console.log(`I am ${this.name}. I know ${student.name} has joined Class ${student.klass.number}.`);
+        return `I am ${this.name}. I know ${student.name} has joined Class ${student.klass.number}.`;
     }
 }
 exports["default"] = Teacher;

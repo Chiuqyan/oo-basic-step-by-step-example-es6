@@ -94,13 +94,13 @@ describe("Class", () => {
     let sandbox;
     let spy;
 
-    beforeEach(()=>{
+    beforeEach(() => {
         sandbox = sinon.sandbox.create();
         spy = sandbox.stub(console, 'log');
     });
 
     afterEach(() => {
-      sandbox.restore();
+        sandbox.restore();
     });
 
     it("should have class number", () => {
@@ -121,7 +121,7 @@ describe("Class", () => {
             klass.assignLeader(student);
 
             expect(klass.leader).to.equal(student);
-         });
+        });
 
         it("should not assign student as Leader, given student is not class member", () => {
             const klass = new Class(2);
@@ -150,7 +150,7 @@ describe("Class", () => {
             const otherKlass = new Class(3);
             const student = new Student(1, "Jerry", 21, klass);
             const teacher = new Teacher(1, "Tom", 21, [klass, otherKlass]);
-            klass.registerAssignLeaderListener(teacher);
+            klass.registerAssignLeaderListener(teacher, student);
 
             klass.assignLeader(student);
 
@@ -178,7 +178,7 @@ describe("Class", () => {
             const teacher = new Teacher(1, "Tom", 21, [klass, otherKlass]);
 
             const student = new Student(1, "Jerry", 21, otherKlass);
-            klass.registerJoinListener(teacher);
+            klass.registerJoinListener(teacher, student);
 
             klass.appendMember(student);
 

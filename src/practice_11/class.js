@@ -6,6 +6,13 @@ class Class {
     getDisplayName() {
         return `Class ${this.number}`;
     }
+    registerAssignLeaderListener(teacher, student) {
+        if (student.klass.number === this.number) {
+            this.leader = student;
+            if (typeof(teacher) !== 'undefined')
+                console.log(`I am ${teacher.name}. I know ${student.name} become Leader of Class ${student.klass.number}.`);
+        }
+    }
 
     assignLeader(student, teacher) {
         if (student.klass.number === this.number) {
@@ -14,6 +21,11 @@ class Class {
                 teacher.registerAssignLeaderListener(student);
         } else
             console.log("It is not one of us.");
+    }
+    registerJoinListener(teacher, student) {
+        student.klass = this;
+        if (typeof(teacher) !== 'undefined')
+            console.log(`I am ${teacher.name}. I know ${student.name} has joined Class ${student.klass.number}.`);
     }
 
     appendMember(student, teacher) {
